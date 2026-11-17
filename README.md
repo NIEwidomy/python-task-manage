@@ -10,3 +10,5 @@ python3 main.py list
 python3 main.py done 0
 python3 main.py delete 0
 ```
+0 - przykładowe ID
+Wymaganie Python 3 - Program korzysta wyłącznie z biblioteki standardowej.
