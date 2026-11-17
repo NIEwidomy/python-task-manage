@@ -3,7 +3,7 @@ import json
 
 try:
     funkcja = sys.argv[1]
-except ValueError:
+except IndexError:
     sys.exit("Podaj 1 argument")
 
 try:
@@ -58,7 +58,7 @@ def usuwanie(wartosc):
 if funkcja == "add":
     try:
         argument = sys.argv[2]
-    except ValueError:
+    except IndexError:
         sys.exit("Podaj argument")
     if argument.strip() == "":
         sys.exit("Podaj jakie ma byc zadanie")
@@ -70,14 +70,14 @@ elif funkcja == "done":
     try:
         argument = sys.argv[2]
         int(argument)
-    except ValueError:
+    except (ValueError, IndexError):
         sys.exit("Podaj argument/prawidłowy argument")
     zrobione(argument)
 elif funkcja == "delete":
     try:
         argument = sys.argv[2]
         int(argument)
-    except (ValueError, TypeError):
+    except (ValueError, IndexError):
         sys.exit("Podaj argument/prawidłowy argument")
     usuwanie(argument)
 else:
